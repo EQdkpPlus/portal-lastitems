@@ -42,6 +42,7 @@ $portal_settings['lastitems'] = array(
         'language'  => 'pk_last_items_limit',
         'property'  => 'text',
         'size'      => '2',
+        'help'      => 'pk_help_lastitems_limit',
       ),
 );
 
