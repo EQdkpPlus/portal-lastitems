@@ -24,7 +24,7 @@ if ( !defined('EQDKP_INC') ){
 $portal_module['lastitems'] = array(
 			'name'			    => 'LastItems Module',
 			'path'			    => 'lastitems',
-			'version'		    => '1.0.0',
+			'version'		    => '1.0.1',
 			'author'        => 'Corgan',
 			'contact'		    => 'http://www.eqdkp-plus.com',
 			'description'   => 'Show last items',
