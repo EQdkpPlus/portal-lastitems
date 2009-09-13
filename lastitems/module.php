@@ -52,37 +52,29 @@ if(!function_exists(lastitems_module))
   {
   	global $eqdkp_root_path , $user, $eqdkp,$tpl,$conf_plus,$html, $plang, $pdc;
 
-  		$out = $pdc->get('dkp.portal.modul.lastitems',false,true);
-  		if (!$out)
+  		$items = $pdc->get('dkp.portal.modul.lastitems',false,true);
+  		if (!$items)
   		{
 			include_once($eqdkp_root_path.'pluskernel/bridge/bridge_class.php');
 			$br = new eqdkp_bridge();
 			$limit = ($conf_plus['pk_last_items_limit'] > 0) ? $conf_plus['pk_last_items_limit'] : '5' ;
-			$lastitems = $br->get_last_items($limit);
-
-			if (is_array($lastitems))
-			{
-				$out = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">';
-
-				foreach ($lastitems as $item)
-				{
-					$class = $eqdkp->switch_row_class();
-					$out .= '<tr class="'.$class.'" nowrap onmouseover="this.className=\'rowHover\';" onmouseout="this.className=\''.$class.'\';">'.
+			$items = $br->get_last_items($limit);
+            $pdc->put('dkp.portal.modul.lastitems',$items,86400,false,true);
+        }
+        if (is_array($items)) {
+			$out = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder">';
+			foreach ($items as $item) {
+				$class = $eqdkp->switch_row_class();
+				$out .= '<tr class="'.$class.'" nowrap onmouseover="this.className=\'rowHover\';" onmouseout="this.className=\''.$class.'\';">'.
 								"<td>
 									<a href='{$eqdkp_root_path}viewitem.php?i=". $item['id']."'>".$html->itemstats_item(stripslashes($item['name']),$item['game_itemid'])."</a> <br>".
 									get_coloredLinkedName($item['looter']).' ('.$item['value'].' DKP)
 								</td>
 							</tr>';
-				}
-				$out .= '</table>';
-
-				$pdc->put('dkp.portal.modul.lastitems',$out,86400,false,true);
-				return $out;
 			}
-			$pdc->put('dkp.portal.modul.lastitems',$out,86400,false,true);
+			$out .= '</table>';
   		}
   		return $out;
-
   }
 }
 ?>
