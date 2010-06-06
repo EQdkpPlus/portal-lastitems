@@ -21,8 +21,8 @@ if ( !defined('EQDKP_INC') ){
 }
 
 
-$plang = array_merge($plang, array(
-  'lastitems'             => 'ÃÖ±Ù ¾ÆÀÌÅÛ',
-  'pk_last_items_limit'   => '¾ÆÀÌÅÛ µð½ºÇÃ·¹ÀÌ ¼ýÀÚ ÇÑÁ¤',
-));
+$lang = array(
+  'lastitems'             => 'ÃƒÃ–Â±Ã™ Â¾Ã†Ã€ÃŒÃ…Ã›',
+  'pk_last_items_limit'   => 'Â¾Ã†Ã€ÃŒÃ…Ã› ÂµÃ°Â½ÂºÃ‡ÃƒÂ·Â¹Ã€ÃŒ Â¼Ã½Ã€Ãš Ã‡Ã‘ÃÂ¤',
+);
 ?>
