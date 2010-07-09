@@ -4,14 +4,14 @@ if (!defined('EQDKP_INC')) {
 	die('You cannot access this file directly.');
 }
 
-//Language: French	
-//Created by EQdkp Plus Translation Tool on  2010-07-09 13:55
+//Language: Spanish	
+//Created by EQdkp Plus Translation Tool on  2010-07-09 15:10
 //File: module_lastitems
 //Source-Language: english
 
 $alang = array( 
-"lastitems" => "Derniers objets",
-"pk_last_items_limit" => "Limite des objets",
+"lastitems" => "Últimos objetos",
+"pk_last_items_limit" => "Limitar los objetos",
  );
 $plang = array_merge($plang, $alang);
 ?>
