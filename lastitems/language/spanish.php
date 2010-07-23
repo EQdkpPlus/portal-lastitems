@@ -9,9 +9,9 @@ if (!defined('EQDKP_INC')) {
 //File: module_lastitems
 //Source-Language: english
 
-$alang = array( 
+$plang = array_merge($plang, array(
 "lastitems" => "Últimos objetos",
 "pk_last_items_limit" => "Limitar los objetos",
- );
-$plang = array_merge($plang, $alang);
+ ));
+
 ?>

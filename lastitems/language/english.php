@@ -21,8 +21,8 @@ if ( !defined('EQDKP_INC') ){
 }
 
 
-$lang = array(
+$plang = array_merge($plang, array(
   'lastitems'             => 'Last Items',
   'pk_last_items_limit'   => 'Limit the Items',
-);
+));
 ?>
