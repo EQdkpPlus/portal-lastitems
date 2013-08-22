@@ -22,7 +22,7 @@ if ( !defined('EQDKP_INC') ){
 
 class lastitems_portal extends portal_generic {
 	public static function __shortcuts() {
-		$shortcuts = array('pdh', 'core', 'config', 'user');
+		$shortcuts = array('pdh', 'core', 'config', 'user', 'routing');
 		return array_merge(parent::$shortcuts, $shortcuts);
 	}
 
@@ -56,22 +56,23 @@ class lastitems_portal extends portal_generic {
 		arsort($allitems);
 		$items = array_keys(array_slice($allitems, 0, $limit, true));
 		if (is_array($items) && count($items) > 0) {
-			$out = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="noborder colorswitch hoverrows">';
+			$out = '<table width="100%" class="colorswitch hoverrows">';
 			infotooltip_js();
 			foreach ($items as $item) {
 				$buyer = $this->pdh->get('item', 'buyer', array($item));
 				$out .= '<tr class="nowrap">'.
 								"<td>
-									".$this->pdh->get('item', 'link_itt', array($item, 'viewitem.php')).' <br />'.$this->pdh->get('member', 'html_memberlink', array($buyer, $this->root_path.'viewcharacter.php', '', false, false, true)).' ('.$this->pdh->get('item', 'html_value', array($item))." ".$this->config->get('dkp_name').")
+									".$this->pdh->get('item', 'link_itt', array($item, $this->routing->build('item', false, false, false), '', false, false, false,false,false,true)).' <br />'.
+									$this->pdh->get('member', 'html_memberlink', array($buyer, $this->routing->build('character', false, false, false), '', false, false, true, true))
+									.' ('.$this->pdh->get('item', 'html_value', array($item))." ".$this->config->get('dkp_name').")
 								</td>
 							</tr>";
 			}
 			$out .= '</table>';
 		} else {
-			$out = '<table width="100%" border="0" cellspacing="1" cellpadding="2" class="colorswitch"><tr><td>'.$this->user->lang('pk_last_items_noitems')."</td></tr></table>";
+			$out = $this->user->lang('pk_last_items_noitems');
 		}
 		return $out;
 	}
 }
-if(version_compare(PHP_VERSION, '5.3.0', '<')) registry::add_const('short_lastitems_portal', lastitems_portal::__shortcuts());
 ?>
