@@ -63,9 +63,11 @@ class lastitems_portal extends portal_generic {
 				$out .= '<tr class="nowrap">'.
 								"<td>
 									".$this->pdh->get('item', 'link_itt', array($item, $this->routing->build('item', false, false, false), '', false, false, false,false,false,true)).' <br />'.
-									$this->pdh->get('member', 'html_memberlink', array($buyer, $this->routing->build('character', false, false, false), '', false, false, true, true))
-									.' ('.$this->pdh->get('item', 'html_value', array($item))." ".$this->config->get('dkp_name').")
-								</td>
+									$this->pdh->get('member', 'html_memberlink', array($buyer, $this->routing->build('character', false, false, false), '', false, false, true, true));
+					if (!$this->config->get('pk_disable_points')){
+									$out .= ' ('.$this->pdh->get('item', 'html_value', array($item))." ".$this->config->get('dkp_name').")";
+					}
+				$out .=	"			</td>
 							</tr>";
 			}
 			$out .= '</table>';
