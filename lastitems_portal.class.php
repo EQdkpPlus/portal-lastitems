@@ -31,6 +31,7 @@ class lastitems_portal extends portal_generic {
 		'name'			=> 'LastItems Module',
 		'version'		=> '2.0.0',
 		'author'		=> 'Corgan',
+		'icon'			=> 'fa-trophy',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Show last items',
 	);
