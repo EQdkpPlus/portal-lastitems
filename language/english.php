@@ -25,7 +25,7 @@ $lang = array(
 	'lastitems'				=> 'Last Items',
 	'lastitems_name'		=> 'Last Items',
 	'lastitems_desc'		=> 'Show last dropped items',
-	'pk_last_items_limit'	=> 'Limit the Items',
+	'lastitems_f_limit'		=> 'Limit the Items',
 	'pk_last_items_noitems' => 'No Items available',
 );
 ?>

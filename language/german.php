@@ -25,7 +25,7 @@ $lang = array(
 	'lastitems'				=> 'Letzte Gegenstände',
 	'lastitems_name'		=> 'Letzte Gegenstände',
 	'lastitems_desc'		=> 'Zeigt die letzten erhaltenen Gegenstände an',
-	'pk_last_items_limit'	=> 'Anzeige Limit der letzten Items ',
+	'lastitems_f_limit'		=> 'Anzeige Limit der letzten Items ',
 	'pk_last_items_noitems' => 'Keine Gegenstände vorhanden',
 );
 ?>

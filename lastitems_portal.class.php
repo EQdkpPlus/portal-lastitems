@@ -21,38 +21,32 @@ if ( !defined('EQDKP_INC') ){
 }
 
 class lastitems_portal extends portal_generic {
-	public static function __shortcuts() {
-		$shortcuts = array('pdh', 'core', 'config', 'user', 'routing');
-		return array_merge(parent::$shortcuts, $shortcuts);
-	}
 
-	protected $path		= 'lastitems';
-	protected $data		= array(
+	protected static $path		= 'lastitems';
+	protected static $data		= array(
 		'name'			=> 'LastItems Module',
 		'version'		=> '2.0.0',
 		'author'		=> 'Corgan',
 		'icon'			=> 'fa-trophy',
 		'contact'		=> EQDKP_PROJECT_URL,
 		'description'	=> 'Show last items',
+		'lang_prefix'	=> 'lastitems_'
 	);
-	protected $positions = array('left1', 'left2', 'right');
+	protected static $positions = array('left1', 'left2', 'right');
 	protected $settings	= array(
-		'pk_last_items_limit'	=> array(
-			'name'		=> 'pk_last_items_limit',
-			'language'	=> 'pk_last_items_limit',
-			'property'	=> 'text',
+		'limit'	=> array(
+			'type'		=> 'text',
 			'size'		=> '2',
-			'help'		=> 'pk_help_lastitems_limit',
 		),
 	);
-	protected $install	= array(
+	protected static $install	= array(
 		'autoenable'		=> '1',
 		'defaultposition'	=> 'right',
 		'defaultnumber'		=> '2',
 	);
 
 	public function output() {
-		$limit = ($this->config->get('pk_last_items_limit') > 0) ? $this->config->get('pk_last_items_limit') : '5' ;
+		$limit = ($this->config('limit') > 0) ? $this->config('limit') : '5' ;
 		$allitems = $this->pdh->aget('item', 'date', 0, array($this->pdh->get('item', 'id_list')));
 		arsort($allitems);
 		$items = array_keys(array_slice($allitems, 0, $limit, true));
