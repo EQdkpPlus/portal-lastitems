@@ -44,6 +44,8 @@ class lastitems_portal extends portal_generic {
 		'defaultposition'	=> 'right',
 		'defaultnumber'		=> '2',
 	);
+	
+	protected static $apiLevel = 20;
 
 	public function output() {
 		$limit = ($this->config('limit') > 0) ? $this->config('limit') : '5' ;
