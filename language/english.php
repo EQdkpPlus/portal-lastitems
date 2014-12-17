@@ -1,6 +1,6 @@
 <?php
 /*	Project:	EQdkp-Plus
- *	Package:	Last item Portal Module
+ *	Package:	EQdkp-Plus Language File
  *	Link:		http://eqdkp-plus.eu
  *
  *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
@@ -19,16 +19,23 @@
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-if ( !defined('EQDKP_INC') ){
-	header('HTTP/1.0 404 Not Found');exit;
+ 
+if (!defined('EQDKP_INC')) {
+	die('You cannot access this file directly.');
 }
 
+//Language: English	
+//Created by EQdkp Plus Translation Tool on  2014-12-17 21:28
+//File: portal/lastitems/language/english.php
+//Source-Language: german
 
-$lang = array(
-	'lastitems'				=> 'Last Items',
-	'lastitems_name'		=> 'Last Items',
-	'lastitems_desc'		=> 'Show last dropped items',
-	'lastitems_f_limit'		=> 'Limit the Items',
-	'pk_last_items_noitems' => 'No Items available',
+$lang = array( 
+	"lastitems" => 'Last Items',
+	"lastitems_name" => 'Last Items',
+	"lastitems_desc" => 'Show last dropped items',
+	"lastitems_f_limit" => 'Limit the Items',
+	"pk_last_items_noitems" => 'No Items available',
+	
 );
+
 ?>
