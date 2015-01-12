@@ -56,7 +56,7 @@ class lastitems_portal extends portal_generic {
 		arsort($allitems);
 		$items = array_keys(array_slice($allitems, 0, $limit, true));
 		if (is_array($items) && count($items) > 0) {
-			$out = '<table width="100%" class="colorswitch hoverrows">';
+			$out = '<table class="table fullwidth colorswitch hoverrows">';
 			infotooltip_js();
 			foreach ($items as $item) {
 				$buyer = $this->pdh->get('item', 'buyer', array($item));
