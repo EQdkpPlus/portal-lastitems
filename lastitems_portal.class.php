@@ -28,7 +28,7 @@ class lastitems_portal extends portal_generic {
 	protected static $path		= 'lastitems';
 	protected static $data		= array(
 		'name'			=> 'LastItems Module',
-		'version'		=> '3.0.0',
+		'version'		=> '3.0.1',
 		'author'		=> 'Corgan',
 		'icon'			=> 'fa-trophy',
 		'contact'		=> EQDKP_PROJECT_URL,
