@@ -60,7 +60,7 @@ class lastitems_portal extends portal_generic {
 			infotooltip_js();
 			foreach ($items as $item) {
 				$buyer = $this->pdh->get('item', 'buyer', array($item));
-				$out .= '<tr class="nowrap">'.
+				$out .= '<tr>'.
 								"<td>
 									".$this->pdh->get('item', 'link_itt', array($item, $this->routing->simpleBuild('items'), '', false, false, false,false,false,true)).' <br />'.
 									$this->pdh->get('member', 'html_memberlink', array($buyer, $this->routing->simpleBuild('character'), '', false, false, true, true));
